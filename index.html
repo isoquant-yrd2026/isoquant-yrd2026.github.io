@@ -984,7 +984,8 @@ html.js .sess.reveal:not(.in)::before{transform:scaleX(0)}
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = '.h2big, .lead, .tl > li, .ws li, .sess, .talk, .ff dl > *, .info > div, footer .wrap > *';
+  // footer not animated: at the page bottom it sits in the observer's cut-off strip on tall windows and never appeared
+  var sel = '.h2big, .lead, .tl > li, .ws li, .sess, .talk, .ff dl > *, .info > div';
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   // stagger siblings
   var groups = new Map();
